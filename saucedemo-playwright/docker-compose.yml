@@ -1,0 +1,11 @@
+services:
+  tests:
+    build: .
+    init: true
+    ipc: host
+    environment:
+      CI: "true"
+      BASE_URL: https://www.saucedemo.com
+    volumes:
+      - ./artifacts:/app/artifacts
+    command: ["npm", "test"]
